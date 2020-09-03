@@ -1,0 +1,10 @@
+{
+    "name": "laviron/the_game",
+    "type": "project",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Game\\": "src/"
+        }
+    }
+}
