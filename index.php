@@ -7,12 +7,14 @@ require_once 'vendor/autoload.php';
 
 session_start();
 
-if (!isset($_SESSION['game'])) {
-    $_SESSION['game'] = 1;
-    /* echo 'Le jeu commence !'; */
-} else {
-    /* echo 'Le jeu a déjà commencé'; */
+if ($_SERVER['REQUEST_URI'] === '/run') {
+    $game = new Game();
+    $game->run();
+
+    header('Content-Type: application/json; charset=UTF8');
+    echo json_encode($game->getData());
+
+    die ;
 }
 
-$game = new Game();
-$game->run();
+include 'index.phtml';

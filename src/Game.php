@@ -82,4 +82,15 @@ class Game
 
         return $count;
     }
+
+    public function getData()
+    {
+        $data = [];
+
+        foreach ($this->state['personnages'] as $personnage) {
+            $data['personnages'][] = $personnage->getData();
+        }
+
+        return $data;
+    }
 }

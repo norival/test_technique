@@ -77,4 +77,14 @@ class Personnage
             'tours_restants' => $turns,
         ];
     }
+
+    public function getData()
+    {
+        return [
+            'nom'   => $this->name,
+            'sante' => $this->state,
+            'pv'    => $this->pv,
+            'alive' => $this->alive,
+        ];
+    }
 }
